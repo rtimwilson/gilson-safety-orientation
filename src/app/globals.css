@@ -1,26 +1,188 @@
 @import "tailwindcss";
 
+/* Gil-Son Construction Brand Colors - Official */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Primary Brand Colors */
+  --gilson-red: #a12642;
+  --gilson-navy: #0a1a72;
+  --gilson-charcoal: #231f20;
+  --gilson-white: #ffffff;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Extended Palette */
+  --gilson-red-light: #c93343;
+  --gilson-red-dark: #7a1c32;
+  --gilson-red-darker: #5a1424;
+  --gilson-navy-light: #2f439e;
+  --gilson-navy-dark: #050d3a;
+  --gilson-gray: #6b6b6b;
+  --gilson-gray-light: #f5f5f5;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Brand Gradients */
+  --gilson-red-gradient: linear-gradient(
+    135deg,
+    #a12642 0%,
+    #8a1f38 40%,
+    #7a1c32 70%,
+    #5a1424 100%
+  );
+
+  --gilson-navy-gradient: linear-gradient(
+    135deg,
+    #2f439e 0%,
+    #1a3a6e 30%,
+    #0a1a72 60%,
+    #050d3a 100%
+  );
+
+  --gilson-overlay-red: linear-gradient(
+    135deg,
+    rgba(161, 38, 66, 0.85) 0%,
+    rgba(90, 20, 36, 0.95) 100%
+  );
+
+  /* App defaults */
+  --background: var(--gilson-gray-light);
+  --foreground: var(--gilson-charcoal);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Work Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Utility Classes for Gilson Brand */
+.bg-gilson-red { background: var(--gilson-red); }
+.bg-gilson-navy { background: var(--gilson-navy); }
+.bg-gilson-red-gradient { background: var(--gilson-red-gradient); }
+.bg-gilson-navy-gradient { background: var(--gilson-navy-gradient); }
+.text-gilson-red { color: var(--gilson-red); }
+.text-gilson-navy { color: var(--gilson-navy); }
+.text-gilson-charcoal { color: var(--gilson-charcoal); }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gilson-gray-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gilson-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gilson-charcoal);
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Diagonal stripe pattern for industrial feel */
+.diagonal-stripe {
+  background: repeating-linear-gradient(
+    135deg,
+    transparent,
+    transparent 10px,
+    rgba(161, 38, 66, 0.05) 10px,
+    rgba(161, 38, 66, 0.05) 20px
+  );
+}
+
+/* Form inputs with brand focus */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  background-color: rgba(161, 38, 66, 0.1);
+}
+
+/* Focus states - brand colors */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--gilson-red) !important;
+  box-shadow: 0 0 0 3px rgba(161, 38, 66, 0.2);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Touch optimizations for mobile */
+@media (hover: none) {
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Video player styles */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+/* PWA safe areas */
+@supports (padding: max(0px)) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Button hover states with brand colors */
+.btn-gilson-red {
+  background: var(--gilson-red);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn-gilson-red:hover {
+  background: var(--gilson-red-dark);
+}
+
+.btn-gilson-red:active {
+  background: var(--gilson-red-darker);
+}
+
+.btn-gilson-navy {
+  background: var(--gilson-navy);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn-gilson-navy:hover {
+  background: var(--gilson-navy-light);
+}
+
+.btn-gilson-navy:active {
+  background: var(--gilson-navy-dark);
 }

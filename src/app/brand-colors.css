@@ -1,0 +1,59 @@
+/* Gil-Son Construction Brand Colors
+ * Extracted from official logo and marketing materials
+ * Use these CSS variables in all Gil-Son frontend projects
+ */
+
+:root {
+  /* Primary Brand Colors */
+  --gilson-red: #a12642;
+  --gilson-navy: #0a1a72;
+  --gilson-charcoal: #231f20;
+  --gilson-white: #ffffff;
+
+  /* Extended Palette */
+  --gilson-red-light: #c93343;
+  --gilson-red-dark: #7a1c32;
+  --gilson-red-darker: #5a1424;
+  --gilson-navy-light: #2f439e;
+  --gilson-navy-dark: #050d3a;
+  --gilson-gray: #6b6b6b;
+  --gilson-gray-light: #f5f5f5;
+
+  /* Brand Gradients */
+  --gilson-red-gradient: linear-gradient(
+    135deg,
+    #a12642 0%,
+    #8a1f38 40%,
+    #7a1c32 70%,
+    #5a1424 100%
+  );
+
+  --gilson-navy-gradient: linear-gradient(
+    135deg,
+    #2f439e 0%,
+    #1a3a6e 30%,
+    #0a1a72 60%,
+    #050d3a 100%
+  );
+
+  --gilson-overlay-red: linear-gradient(
+    135deg,
+    rgba(161, 38, 66, 0.85) 0%,
+    rgba(90, 20, 36, 0.95) 100%
+  );
+
+  --gilson-overlay-navy: linear-gradient(
+    135deg,
+    rgba(10, 26, 114, 0.85) 0%,
+    rgba(5, 13, 58, 0.95) 100%
+  );
+}
+
+/* Utility Classes */
+.bg-gilson-red { background: var(--gilson-red); }
+.bg-gilson-navy { background: var(--gilson-navy); }
+.bg-gilson-red-gradient { background: var(--gilson-red-gradient); }
+.bg-gilson-navy-gradient { background: var(--gilson-navy-gradient); }
+.text-gilson-red { color: var(--gilson-red); }
+.text-gilson-navy { color: var(--gilson-navy); }
+.text-gilson-charcoal { color: var(--gilson-charcoal); }

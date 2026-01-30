@@ -1,0 +1,27 @@
+{
+  "name": "Gil-Son Safety Orientation",
+  "short_name": "Gil-Son Safety",
+  "description": "Complete your safety orientation for Gil-Son Construction Limited",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f5f5",
+  "theme_color": "#a12642",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/gilson-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/gilson-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "screenshots": [],
+  "prefer_related_applications": false
+}
