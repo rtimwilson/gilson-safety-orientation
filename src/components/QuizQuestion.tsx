@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 interface QuizQuestionProps {
   questionNumber: number
@@ -21,6 +21,12 @@ export function QuizQuestion({
 }: QuizQuestionProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<boolean | null>(null)
   const [showResult, setShowResult] = useState(false)
+
+  // Reset state when question changes to enable buttons for new question
+  useEffect(() => {
+    setSelectedAnswer(null)
+    setShowResult(false)
+  }, [questionNumber])
 
   const handleAnswer = (answer: boolean) => {
     if (showResult) return // Prevent changing answer after submission
